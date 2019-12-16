@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- layout design for main game screen -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layoutGameContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.AppCompat"
+
+        app:layout_constraintBaseline_toBaselineOf="parent"
+        >
+        <Button
+            android:id="@+id/btnEndGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:text="End Game"
+            android:background="#9900ff"
+            android:layout_gravity="right"
+            android:onClick="onClickEndGame"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/txvGamePrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/layoutGameInfo3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="18sp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        >
+
+    </TextView>
+    <LinearLayout
+        android:id="@+id/layoutGameInfo3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@id/layoutGameInfo2"
+        >
+        <TextView
+            android:id="@+id/txvMissedPopLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Missed Pop Count:"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/txvMissedPop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="18dp"
+            >
+        </TextView>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutGameInfo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@id/layoutGameInfo1"
+        >
+        <TextView
+            android:id="@+id/txvGoodPopLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good Pop Count:"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/txvGoodPop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="18dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/txvAllPopLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Pop Count:"
+            android:textSize="14sp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/txvAllPop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutGameInfo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@id/blfMainField"
+        >
+        <TextView
+            android:id="@+id/txvScoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/txvCurScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="18dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/txvTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remaining Time:"
+            android:textSize="14sp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+
+        <!--
+        <TextView
+            android:id="@+id/txvRemTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+        </TextView>
+        -->
+        <com.example.balloonspop.AnimateView
+            android:id="@+id/avRemDuration"
+            android:layout_width="30dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:background="#00000000"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+
+            >
+        </com.example.balloonspop.AnimateView>
+
+
+    </LinearLayout>
+
+    <com.example.balloonspop.BalloonField
+        android:id="@+id/blfMainField"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@drawable/viewborder"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+<!--  -->
+</androidx.constraintlayout.widget.ConstraintLayout>

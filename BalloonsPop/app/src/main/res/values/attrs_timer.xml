@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="AnimateView">
+        <attr name="exampleStringA" format="string" />
+        <attr name="exampleDimensionA" format="dimension" />
+        <attr name="exampleColorA" format="color" />
+        <attr name="exampleDrawableA" format="color|reference" />
+    </declare-styleable>
+</resources>
